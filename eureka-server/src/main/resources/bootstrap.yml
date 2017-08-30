@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: registry
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+
+---
+spring:
+  profiles:
+    active: local-peer-2
