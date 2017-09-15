@@ -3,10 +3,11 @@ spring:
     name: registry
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://192.168.0.111:9998
       fail-fast: true
-
+server:
+  port: 10000
 ---
 spring:
   profiles:
-    active: local-peer-2
+    active: local
