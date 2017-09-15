@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: registry
+  cloud:
+    config:
+      uri: http://192.168.0.111:9998
+      fail-fast: true
+server:
+  port: 10001
+---
+spring:
+  profiles:
+    active: local-replica-1

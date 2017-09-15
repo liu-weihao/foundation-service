@@ -1,0 +1,6 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:10000/eureka/
+  instance:
+    hostname: peer2
