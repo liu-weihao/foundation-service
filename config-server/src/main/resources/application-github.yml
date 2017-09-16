@@ -5,4 +5,3 @@ spring:
         git:
           uri: https://github.com/liu-weihao/config-server.git
           default-label: master
-

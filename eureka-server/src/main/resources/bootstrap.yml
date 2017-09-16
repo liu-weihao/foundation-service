@@ -3,10 +3,8 @@ spring:
     name: registry
   cloud:
     config:
-      uri: http://192.168.0.111:9998
+      uri: http://127.0.0.1:9998
       fail-fast: true
-server:
-  port: 10000
 ---
 spring:
   profiles:

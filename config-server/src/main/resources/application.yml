@@ -1,18 +1,8 @@
 server:
   port: 9998
-
 spring:
   application:
     name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: http://192.168.0.111/yoogurt/config-server.git
-          search-paths: resources
-          default-label: master
-          username: root
-          password: taxi123456
 ---
 spring:
   profiles:
