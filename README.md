@@ -1,5 +1,5 @@
 # foundation-service
-foundation-service工程包含了项目所有的基础服务：config server、eureka server和zuul server。 
+foundation-service工程包含了项目所有的基础服务：config server、eureka server。 
 
 项目使用了spring全家桶，以spring boot和spring cloud为主。 
 
@@ -55,7 +55,7 @@ gitlab上的配置文件需要按照一定的规则创建，命名规则如下�
 
 对于Eureka Server，访问较为频繁，所以搭了两个实例，两个实例互相注册，即可在两者之间共享注册上来的服务，因此，每个Eureka Server只需要指定一台Eureka Server，即可将自身服务同步到整个Eureka集群，
 
-除了config server和一些公共的项目依赖，不出意外，每个服务（后面讲到的Zuul Server也不例外）都将成为一个Eureka Client，注册到Eureka Server中。这就需要在bootstrap.yml中进行配置，而这部分配置被放在了config server中进行管理，所以，项目中所涉及到的配置信息还是上述所讲到的。放一小段配置：
+除了config server和一些公共的项目依赖，不出意外，每个服务都将成为一个Eureka Client，注册到Eureka Server中。这就需要在bootstrap.yml中进行配置，而这部分配置被放在了config server中进行管理，所以，项目中所涉及到的配置信息还是上述所讲到的。放一小段配置：
 
 	ureka:
 	  client:
