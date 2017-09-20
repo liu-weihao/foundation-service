@@ -69,19 +69,7 @@ gitlab上的配置文件需要按照一定的规则创建，命名规则如下�
 		<artifactId>spring-cloud-starter-eureka</artifactId>
 	</dependency>
 
-3、zuul server，统一网关服务器。天然支持了软负载均衡(ribbon)，在配置文件中只需要指定service-id（即为每个项目的application name），如果在Eureka Server上发现有多个服务的service-id是一样的，则根据一定的策略会进行Load Balance。
-
-和Eureka Server一样，Zuul Server的配置文件也放在了gitlab上，采用上述的最佳实践即可。放一小段关于zuul专用配置：
-
-	zuul:
-	  routes:
-	    user:
-	      path: /user/**
-	      serviceId: taxi-user
-	    auth:
-	      path: /auth/**
-	      serviceId: auth-center
-
+3、gateway，统一网关。因为跟业务系统联系比较紧密，故而将其抽离开来，纳入在Business Service中。
 
 ## 如何启动项目？ ##
 
@@ -94,8 +82,8 @@ gitlab上的配置文件需要按照一定的规则创建，命名规则如下�
 	127.0.0.1 peer1
 	127.0.0.1 peer2
 
-然后还需要启动两个 SpringbootApplication。先运行 EurekaServerApplication 类中的 main 方法，启动成功后，将bootstrap.yml中的profile换一个，但是要保证能在config server中找到对应的配置文件，然后再运行 Application 类中的 main 方法；
+EurekaServerApplication 类中的 main 方法，第一个Eureka服务就启动成功；
 
-4、启动 zuul server：运行 ZuulServerApplication 类中的 main 方法即可；
+4、启动 eureka server replica：运行 EurekaReplicaBootstrap 类中的 main 方法，Eureka的副本集启动成功；
 
-5、访问 http://localhost:8761 将进入eureka dashboard，看到了两个eureka实例和一个gateway实例，表示项目启动成功了。
+5、访问 http://localhost:8761 将进入eureka dashboard，看到了两个eureka实例，表示项目启动成功了。
