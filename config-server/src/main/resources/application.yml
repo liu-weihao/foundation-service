@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: config-server
+encrypt:
+  key: Yoogurt-Taxi123~!@#
 ---
 spring:
   profiles:
