@@ -4,11 +4,11 @@ spring:
   application:
     name: config-server
 encrypt:
-  key: Yoogurt-Taxi123~!@#
+  key: ******
 security:
   user:
-    password: taxi123456
-    name: yoogurt
+    password: *****
+    name: ******
 ---
 spring:
   profiles:
