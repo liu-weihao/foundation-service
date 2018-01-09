@@ -1,3 +1,10 @@
+## 注意
+
+此项目已不再维护，请勿在生产环境中使用。
+
+<details>
+<summary>以下为原 README 内容</summary>
+
 # foundation-service
 foundation-service工程包含了项目所有的基础服务：config server、eureka server。 
 
@@ -87,3 +94,4 @@ EurekaServerApplication 类中的 main 方法，第一个Eureka服务就启动�
 4、启动 eureka server replica：运行 EurekaReplicaBootstrap 类中的 main 方法，Eureka的副本集启动成功；
 
 5、访问 http://localhost:8761 将进入eureka dashboard，看到了两个eureka实例，表示项目启动成功了。
+</details>
